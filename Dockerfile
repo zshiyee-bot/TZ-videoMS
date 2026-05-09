@@ -20,7 +20,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # 复制依赖配置文件
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml contributors.json ./
 COPY patches ./patches
 COPY apps ./apps
 COPY packages ./packages
