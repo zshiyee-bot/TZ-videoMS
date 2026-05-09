@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  trilium:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: trilium-notes:latest
+    container_name: trilium-notes
+    restart: unless-stopped
+
+    environment:
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
+      - TZ=Asia/Shanghai
+      - NODE_ENV=production
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      # 数据持久化
+      - ${DATA_DIR:-./trilium-data}:/home/node/trilium-data
+      # 时区同步
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+    healthcheck:
+      test: ["CMD-SHELL", "gosu node node /app/docker_healthcheck.cjs || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

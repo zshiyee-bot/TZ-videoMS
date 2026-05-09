@@ -1,0 +1,78 @@
+@keyframes left-pane-toggle-button-expand {
+    from {
+        rotate: 0deg;
+    } to {
+        rotate: 180deg;
+    }
+}
+
+@keyframes left-pane-toggle-button-collapse {
+    from {
+        rotate: 180deg;
+    } to {
+        rotate: 360deg;
+    }
+}
+
+/* 将切换按钮固定在左侧面板底部 - 白色简约风格 */
+.left-pane-toggle-button {
+    position: fixed !important;
+    left: 65px !important;
+    bottom: 12px !important;
+    z-index: 300 !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: var(--main-text-color) !important;
+    border: none !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: auto !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+}
+
+.left-pane-toggle-button:hover {
+    background: #ffffff !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+}
+
+.left-pane-toggle-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 当launcher pane悬停时，也显示收回按钮 */
+#launcher-pane.vertical:hover ~ * .left-pane-toggle-button {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.layout-vertical .left-pane-toggle-button::before {
+    display: block;
+}
+
+.layout-vertical .left-pane-toggle-button.action-collapse::before {
+    rotate: 360deg;
+    animation: left-pane-toggle-button-collapse 600ms ease-in-out;
+}
+
+.layout-vertical .left-pane-toggle-button.action-expand::before {
+    rotate: 180deg;
+    animation: left-pane-toggle-button-expand 600ms ease-in-out;
+}
+
+/* 为笔记树底部留出空间，避免被按钮遮挡 */
+#left-pane .tree-wrapper {
+    padding-bottom: 56px;
+}
+
+/* 搜索框不需要额外的左侧边距 */
+#left-pane .quick-search-widget {
+    margin-left: 0;
+}

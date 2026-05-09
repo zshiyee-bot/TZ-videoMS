@@ -1,0 +1,56 @@
+# 依赖
+node_modules/
+.pnp
+.pnp.js
+
+# 构建产物
+dist/
+build/
+*.tsbuildinfo
+
+# 缓存
+.cache/
+.vite/
+.turbo/
+
+# 数据目录
+trilium-data/
+data/
+data2/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 测试覆盖率
+coverage/
+*.lcov
+
+# 临时文件
+*.tmp
+*.temp
+.tmp/
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# Claude Code
+.claude/

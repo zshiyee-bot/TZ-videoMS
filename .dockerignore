@@ -1,0 +1,46 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# 构建产物
+dist
+build
+.cache
+
+# 开发工具
+.vscode
+.idea
+.claude
+
+# 测试
+coverage
+*.test.ts
+*.spec.ts
+
+# 文档
+docs
+*.md
+!README.md
+
+# 数据目录
+trilium-data
+data
+data2
+
+# 临时文件
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore

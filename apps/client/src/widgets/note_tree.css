@@ -1,0 +1,40 @@
+.tree-wrapper {
+    .note-indicator-icon.subtree-hidden-badge {
+        font-family: inherit !important;
+        margin-inline: 0.5em;
+        margin-top: 0.3em;
+        background: var(--left-pane-item-action-button-background);
+        color: var(--left-pane-item-action-button-color);
+        padding: 0.2em 0.7em;
+        border-radius: 8px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        vertical-align: middle;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .spotlighted-node {
+        opacity: 0.8;
+        font-style: italic;
+    }
+}
+
+/* 现代化：笔记树项目样式 */
+.tree-wrapper .fancytree-node {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tree-wrapper .fancytree-title {
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 15px;
+}
+
+.tree-wrapper .fancytree-node:hover .fancytree-title {
+    transform: translateX(2px);
+}
+
+.tree-wrapper .fancytree-active .fancytree-title {
+    font-weight: 500;
+}
