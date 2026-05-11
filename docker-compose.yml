@@ -15,7 +15,7 @@ services:
       - NODE_ENV=production
 
     ports:
-      - "8080:8080"
+      - "1020:8080"
 
     volumes:
       # 数据持久化
